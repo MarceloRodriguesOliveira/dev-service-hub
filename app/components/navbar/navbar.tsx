@@ -31,7 +31,7 @@ export default function Navbar() {
           </Button>
         </div>
         <div className="h-full md:hidden sm:flex justify-center items-center text-black pt-2">
-          <IconButton className="h-full flex ">
+          <IconButton className="h-full flex p-0 ">
             <MenuIcon
               sx={{
                 color: "black",
