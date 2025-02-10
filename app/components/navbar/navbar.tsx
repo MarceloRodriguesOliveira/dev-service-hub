@@ -8,7 +8,7 @@ export default function Navbar() {
       <nav className="w-full h-full flex justify-between items-center font-grotesk  ">
         <div className="flex items-center text-4xl h-full">
           <Link href="/" className=" h-full flex items-center">
-            Positvus
+            Positivus
           </Link>
         </div>
         <div className="hidden md:flex items-center md:gap-5 lg:gap-10 h-full ">
