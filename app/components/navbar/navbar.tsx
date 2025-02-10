@@ -5,14 +5,14 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <header className="bg-white w-full h-10 md:h-[68px]">
-      <nav className="w-full h-full flex justify-between items-center font-grotesk border ">
+      <nav className="w-full h-full flex justify-between items-center font-grotesk  ">
         <div className="flex items-center text-4xl h-full">
           <Link href="/" className=" h-full flex items-center">
             Positvus
           </Link>
         </div>
-        <div className="hidden md:flex items-center md:gap-5 lg:gap-10 h-full border">
-          <ul className="flex md:gap-5 lg:gap-10 md:text-xl h-full items-center border ">
+        <div className="hidden md:flex items-center md:gap-5 lg:gap-10 h-full ">
+          <ul className="flex md:gap-5 lg:gap-10 md:text-xl h-full items-center  ">
             <li>
               <a href="#">About Us</a>
             </li>
