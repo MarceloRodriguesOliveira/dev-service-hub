@@ -4,13 +4,15 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <header className="bg-white sm:shadow w-full h-[68px]">
-      <nav className="w-full h-full flex justify-between items-center font-grotesk border border-cyan-500">
-        <div className="flex items-center border border-cyan-200 text-4xl h-full">
-          <Link href="/">Positvus</Link>
+    <header className="bg-white w-full h-10 md:h-[68px]">
+      <nav className="w-full h-full flex justify-between items-center font-grotesk border ">
+        <div className="flex items-center text-4xl h-full">
+          <Link href="/" className=" h-full flex items-center">
+            Positvus
+          </Link>
         </div>
-        <div className="hidden md:flex items-center md:gap-5 lg:gap-10 sm:shadow h-full">
-          <ul className="flex md:gap-5 lg:gap-10 md:text-xl h-full items-center">
+        <div className="hidden md:flex items-center md:gap-5 lg:gap-10 h-full border">
+          <ul className="flex md:gap-5 lg:gap-10 md:text-xl h-full items-center border ">
             <li>
               <a href="#">About Us</a>
             </li>
@@ -28,15 +30,15 @@ export default function Navbar() {
             Login
           </Button>
         </div>
-        <div className="h-full md:hidden sm:flex items-center text-black text-4xl border border-l-cyan-500">
-          <IconButton className="h-full">
+        <div className="h-full md:hidden sm:flex justify-center items-center text-black pt-2">
+          <IconButton className="h-full flex ">
             <MenuIcon
               sx={{
                 color: "black",
                 "&:hover": {
                   color: "lime",
                 },
-                fontSize: 30,
+                fontSize: 36,
               }}
             />
           </IconButton>
