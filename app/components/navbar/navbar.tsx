@@ -1,8 +1,24 @@
-import { Button, IconButton } from "@mui/material";
+"use client";
+
+import {
+  Button,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemText,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [isMenuOpen, setMenu] = useState<boolean>(false);
+
+  const toggleMenu = (open: boolean) => {
+    setMenu(open);
+  };
   return (
     <header className="bg-white w-full h-10 md:h-[68px]">
       <nav className="w-full h-full flex justify-between items-center font-grotesk  ">
@@ -31,7 +47,10 @@ export default function Navbar() {
           </Button>
         </div>
         <div className="h-full md:hidden sm:flex justify-center items-center text-black pt-2">
-          <IconButton className="h-full flex p-0 ">
+          <IconButton
+            className="h-full flex p-0 "
+            onClick={() => toggleMenu(true)}
+          >
             <MenuIcon
               sx={{
                 color: "black",
@@ -44,6 +63,27 @@ export default function Navbar() {
           </IconButton>
         </div>
       </nav>
+      <Drawer
+        anchor="right"
+        open={isMenuOpen}
+        onClose={() => toggleMenu(false)}
+      >
+        <div className="w-64 p-4">
+          {/* Botão de Fechar */}
+          <IconButton onClick={() => toggleMenu(false)} className="mb-4">
+            <CloseIcon />
+          </IconButton>
+
+          {/* Itens do menu */}
+          <List>
+            {["About Us", "Services", "Use Cases"].map((text) => (
+              <ListItem component="button" key={text}>
+                <ListItemText primary={text} />
+              </ListItem>
+            ))}
+          </List>
+        </div>
+      </Drawer>
     </header>
   );
 }
