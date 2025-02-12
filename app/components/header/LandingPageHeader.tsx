@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import LottieConstructionAnimation from "../lottieanimations/lottieConstructionAnimation";
 
 export default function LandingPageHeader() {
