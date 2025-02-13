@@ -12,13 +12,14 @@ const LottieConstructionAnimation = () => {
         alignItems: "center",
         justifyContent: "center",
       }}
+      className="flex justify-start align-top"
     >
       <DotLottieReact
         src="/animations/AnimationConstruction.lottie"
         autoplay={true}
         loop={true}
         //style={{ width: "100%", height: "auto" }}
-        className="w-full h-auto scale-150 lg:scale-[2.0]"
+        className="w-full h-full scale-150  "
       />
     </div>
   );
