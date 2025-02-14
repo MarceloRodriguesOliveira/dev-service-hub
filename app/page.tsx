@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Navbar from "./components/navbar/navbar";
 import LandingPageHeader from "./components/header/LandingPageHeader";
-import Label from "./components/label/Label";
 import ServiceSection from "./components/servicesection/ServiceSection";
 
 export default function Home() {
@@ -12,7 +11,7 @@ export default function Home() {
         <section className="w-full  grid grid-cols-1 lg:grid-cols-2 justify-between items-stretch md:text-left my-8 md:my-16  ">
           <LandingPageHeader />
         </section>
-        <section className="w-full">
+        <section className="w-full border border-red-800">
           <ServiceSection />
         </section>
       </main>
