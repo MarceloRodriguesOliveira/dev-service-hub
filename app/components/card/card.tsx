@@ -15,7 +15,12 @@ export default function Card({
     <>
       <MiniLabel upperText={upperText} bottomText={bottomText} index={index} />
       <LearnMore index={index} />
-      <Magnifier />
+      <div
+        className="absolute scale-75 lg:scale-100 right-0 bottom-0 top-28 lg:right-[50px] lg:top-[72px] 
+      "
+      >
+        <Magnifier />
+      </div>
     </>
   );
 }

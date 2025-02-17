@@ -21,7 +21,7 @@ export default function LearnMore({ index }: { index: number }) {
       </svg>
 
       <p
-        className={`font-grotesk text-x font-light leading-7 ${
+        className={`font-grotesk text-x font-light leading-7 hidden md:block ${
           index == 2 || index == 5 ? "text-white" : "text-dark"
         }`}
       >
