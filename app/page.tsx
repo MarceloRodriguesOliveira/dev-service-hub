@@ -2,6 +2,7 @@ import Image from "next/image";
 import Navbar from "./components/navbar/navbar";
 import LandingPageHeader from "./components/header/LandingPageHeader";
 import ServiceSection from "./components/servicesection/ServiceSection";
+import CallToActionSection from "./components/calltoaction/callToActionSection";
 
 export default function Home() {
   return (
@@ -13,6 +14,9 @@ export default function Home() {
         </section>
         <section className="w-full">
           <ServiceSection />
+        </section>
+        <section className="w-full">
+          <CallToActionSection />
         </section>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
