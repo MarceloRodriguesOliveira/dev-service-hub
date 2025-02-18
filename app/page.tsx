@@ -11,7 +11,7 @@ export default function Home() {
         <section className="w-full  grid grid-cols-1 lg:grid-cols-2 justify-between items-stretch md:text-left my-8 md:my-16  ">
           <LandingPageHeader />
         </section>
-        <section className="w-full border border-red-800">
+        <section className="w-full">
           <ServiceSection />
         </section>
       </main>
