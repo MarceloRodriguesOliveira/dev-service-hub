@@ -5,9 +5,7 @@ type textProp = {
 export default function LabelText({ children }: textProp) {
   return (
     <>
-      <p className="text-lg front-grotesk text-center md:text-left">
-        {children}
-      </p>
+      <p className="text-lg front-grotesk md:text-left">{children}</p>
     </>
   );
 }
