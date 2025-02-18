@@ -43,7 +43,7 @@ export default function ServiceSection() {
       <div className=" grid grid-cols-1 lg:grid-cols-2 gap-10">
         {cardInfo.map((item, index) => (
           <div
-            className={`rounded-[45px] p-12 w-full max-w-[600px] mx-auto flex flex-col space-between gap-24 relative ${
+            className={`rounded-[45px] p-12 w-full mx-auto flex flex-col space-between gap-24 relative ${
               colors[index % colors.length]
             } `}
             key={index}
