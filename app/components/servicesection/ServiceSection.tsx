@@ -32,7 +32,7 @@ export default function ServiceSection() {
   ];
   return (
     <div className="flex flex-col gap-8">
-      <div className="flex items-center justify-center gap-2 md:gap-5 lg:gap-10 flex-wrap md:flex-nowrap lg:flex-wrap md:justify-normal border border-black">
+      <div className="flex items-center justify-center gap-2 md:gap-5 lg:gap-10 flex-wrap md:flex-nowrap lg:flex-wrap md:justify-normal ">
         <Label text="Services" />
         <LabelText>
           At our digital marketing agency, we offer a range of services to
@@ -40,7 +40,7 @@ export default function ServiceSection() {
           succeed online. These services include:
         </LabelText>
       </div>
-      <div className="border border-red grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div className=" grid grid-cols-1 lg:grid-cols-2 gap-10">
         {cardInfo.map((item, index) => (
           <div
             className={`rounded-[45px] p-12 w-full max-w-[600px] mx-auto flex flex-col space-between gap-24 relative ${
