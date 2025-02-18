@@ -38,7 +38,7 @@ export default function Card({
       <MiniLabel upperText={upperText} bottomText={bottomText} index={index} />
       <LearnMore index={index} />
       <div
-        className="absolute scale-[0.8] lg:scale-100 right-0 bottom-0 top-28 lg:right-[50px] lg:top-[72px] 
+        className="absolute scale-[0.8] right-0 bottom-0 top-28 lg:right-[50px] lg:top-[72px] 
       "
       >
         {iconTagHandler(index)}
