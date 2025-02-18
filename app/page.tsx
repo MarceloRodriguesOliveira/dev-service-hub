@@ -3,6 +3,7 @@ import Navbar from "./components/navbar/navbar";
 import LandingPageHeader from "./components/header/LandingPageHeader";
 import ServiceSection from "./components/servicesection/ServiceSection";
 import CallToActionSection from "./components/calltoaction/callToActionSection";
+import WorkingProcessSection from "./components/workingprocess/workingProcessSection";
 
 export default function Home() {
   return (
@@ -14,6 +15,9 @@ export default function Home() {
         </section>
         <section className="w-full">
           <ServiceSection />
+        </section>
+        <section className="w-full">
+          <WorkingProcessSection />
         </section>
         <section className="w-full ">
           <CallToActionSection />
