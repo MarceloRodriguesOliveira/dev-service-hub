@@ -10,7 +10,7 @@ export default function Home() {
     <div className="min-h-screen px-4 md:px-16 xl:px-24">
       <Navbar />
       <main className="flex flex-col gap-[100px] row-start-2 items-center sm:items-start">
-        <section className="w-full  grid grid-cols-1 lg:grid-cols-2 justify-between items-stretch md:text-left   ">
+        <section className="w-full grid grid-cols-1 lg:grid-cols-2 justify-between items-stretch md:text-left   ">
           <LandingPageHeader />
         </section>
         <section className="w-full">
