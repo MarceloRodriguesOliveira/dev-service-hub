@@ -20,7 +20,7 @@ export default function Navbar() {
     setMenu(open);
   };
   return (
-    <header className="bg-white w-full h-10 md:h-[68px] mt-[30px] mb-[70px]">
+    <header className="bg-white w-full h-10 md:h-[68px] mt-[30px] mb-[70px] z-10 sticky top-0">
       <nav className="w-full h-full flex justify-between items-center font-grotesk  ">
         <div className="flex items-center text-4xl h-full">
           <Link href="/" className=" h-full flex items-center">
