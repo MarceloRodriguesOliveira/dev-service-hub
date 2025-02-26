@@ -7,10 +7,7 @@ export default function AuroraGradient({
 }) {
   const backgroundImage = `radial-gradient(125% 125% at 50% 20%, #020617 50%, ${STATIC_COLOR})`;
   return (
-    <section
-      style={{ backgroundImage }}
-      className="relative min-h-screen border border-cyan-500"
-    >
+    <section style={{ backgroundImage }} className="relative min-h-screen">
       {children}
     </section>
   );
