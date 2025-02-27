@@ -19,7 +19,7 @@ export default async function registerAction(
   console.log("=== Server Action Register User");
   console.log(data);
 
-  if (!data.email || !data.name || data.password) {
+  if (!data.email || !data.name || !data.password) {
     return {
       message: "Preencha todos os campos",
       success: false,
@@ -47,5 +47,5 @@ export default async function registerAction(
     },
   });
 
-  return redirect("/");
+  return redirect("/login");
 }
