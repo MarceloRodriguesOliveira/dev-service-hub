@@ -24,6 +24,6 @@ export default async function loginAction(_prevState: any, formData: FormData) {
       return { success: false, message: "Dados de login incorretos" };
     }
     console.error(e);
-    return { success: false, message: "Oops, algun erro occoreu" };
+    return { success: false, message: "Oops, algum erro occoreu" };
   }
 }
