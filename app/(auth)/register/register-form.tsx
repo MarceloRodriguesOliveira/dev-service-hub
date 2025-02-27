@@ -57,7 +57,14 @@ export default function RegisterForm() {
         <div>
           <Button
             disabled={isPending}
-            className="w-full mt-6 bg-dark text-white text-center text-base "
+            sx={{
+              backgroundColor: "#191a23",
+              color: "white",
+              "&:hover": {
+                backgroundColor: "#22232d",
+              },
+            }}
+            className="w-full mt-6 text-white text-center text-base transition ease-in"
             type="submit"
           >
             Registrar
