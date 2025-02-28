@@ -12,6 +12,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import Link from "next/link";
 import { useState } from "react";
+import CubeLogo from "@/public/cube.svg";
 
 export default function Navbar() {
   const [isMenuOpen, setMenu] = useState<boolean>(false);
@@ -20,11 +21,15 @@ export default function Navbar() {
     setMenu(open);
   };
   return (
-    <header className="bg-white/70 w-full h-10 md:h-[68px] mt-[30px] mb-[70px] z-10 sticky top-0">
-      <nav className="w-full h-full flex justify-between items-center font-grotesk  ">
-        <div className="flex items-center text-4xl h-full">
-          <Link href="/" className=" h-full flex items-center">
-            Positivus
+    <header className="bg-white/70 w-full h-[68px] lg:mb-[70px]">
+      <nav className="w-full h-full flex justify-between items-center font-grotesk border border-cyan-700">
+        <div className="flex items-center text-4xl h-full ">
+          <Link
+            href="/"
+            className=" h-full flex items-center justify-center gap-5"
+          >
+            <CubeLogo className="h-full w-full" />
+            <h1 className="hidden sm:inline-block">DevHub</h1>
           </Link>
         </div>
         <div className="hidden md:flex items-center md:gap-5 lg:gap-10 h-full ">
@@ -41,12 +46,12 @@ export default function Navbar() {
           </ul>
           <Button
             variant="outlined"
-            className="rounded-2xl h-full w-24 lg:w-48 text-xl text-black border-black hover:!bg-lime-300 "
+            className="rounded-2xl py-2 w-24 lg:w-48 text-xl text-black border-black hover:!bg-lime-300 "
           >
             Login
           </Button>
         </div>
-        <div className="h-full md:hidden sm:flex justify-center items-center text-black pt-2">
+        <div className="h-full md:hidden sm:flex justify-center items-center text-black ">
           <IconButton
             className="h-full flex p-0 "
             onClick={() => toggleMenu(true)}
