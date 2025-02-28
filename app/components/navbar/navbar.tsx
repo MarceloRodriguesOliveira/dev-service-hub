@@ -21,8 +21,8 @@ export default function Navbar() {
     setMenu(open);
   };
   return (
-    <header className="bg-white/70 w-full h-[68px] lg:mb-[70px]">
-      <nav className="w-full h-full flex justify-between items-center font-grotesk border border-cyan-700">
+    <header className="bg-white/70 w-full h-[68px] mb-5 md:mb-[70px]">
+      <nav className="w-full h-full flex justify-between items-center font-grotesk">
         <div className="flex items-center text-4xl h-full ">
           <Link
             href="/"
