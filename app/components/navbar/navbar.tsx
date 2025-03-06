@@ -22,7 +22,7 @@ export default function Navbar() {
   };
   return (
     <header
-      className="bg-white w-full h-[68px] z-10 fixed top-0  px-1 md:px-16 xl:px-24"
+      className="bg-white w-full h-[68px] z-10 fixed top-0  px-1 md:px-16 xl:px-24 py-2"
       id="header"
     >
       <nav className="w-full h-full flex  justify-between items-center font-grotesk ">
