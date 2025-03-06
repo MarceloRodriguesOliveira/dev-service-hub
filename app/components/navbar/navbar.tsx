@@ -7,6 +7,8 @@ import {
   List,
   ListItem,
   ListItemText,
+  Menu,
+  MenuItem,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -16,10 +18,19 @@ import CubeLogo from "@/public/cube.svg";
 
 export default function Navbar() {
   const [isMenuOpen, setMenu] = useState<boolean>(false);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleLoginClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleLoginClose = () => {
+    setAnchorEl(null);
+  };
 
   const toggleMenu = (open: boolean) => {
     setMenu(open);
   };
+
   return (
     <header
       className="bg-white w-full h-[68px] z-10 fixed top-0  px-1 md:px-16 xl:px-24 py-2"
@@ -46,10 +57,33 @@ export default function Navbar() {
           </ul>
           <Button
             variant="outlined"
+            aria-controls={open ? "basic-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
             className="rounded-2xl py-2 w-24 lg:w-48 text-xl text-black border-black hover:!bg-lime-300 "
+            onClick={handleLoginClick}
           >
             Login
           </Button>
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleLoginClose}
+            MenuListProps={{ "aria-labelledby": "basic-button" }}
+            disablePortal
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "left",
+            }}
+          >
+            <MenuItem>
+              <Link href={"/login"}>Login</Link>
+            </MenuItem>
+            <MenuItem>
+              <Link href={"/register"}>Registrar</Link>
+            </MenuItem>
+          </Menu>
         </div>
         <div className="h-full md:hidden sm:flex justify-center items-center text-black ">
           <IconButton
