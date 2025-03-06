@@ -21,8 +21,11 @@ export default function Navbar() {
     setMenu(open);
   };
   return (
-    <header className="bg-white/70 w-full h-[68px] mb-5 md:mb-[70px]">
-      <nav className="w-full h-full flex justify-between items-center font-grotesk">
+    <header
+      className="bg-white w-full h-[68px] z-10 fixed top-0  px-1 md:px-16 xl:px-24"
+      id="header"
+    >
+      <nav className="w-full h-full flex  justify-between items-center font-grotesk ">
         <div className="flex items-center text-4xl h-full ">
           <Link
             href="/"
@@ -35,13 +38,10 @@ export default function Navbar() {
         <div className="hidden md:flex items-center md:gap-5 lg:gap-10 h-full ">
           <ul className="flex md:gap-5 lg:gap-10 md:text-xl h-full items-center  ">
             <li>
-              <a href="#">About Us</a>
+              <a href="#services">Services</a>
             </li>
             <li>
-              <a href="#">Services</a>
-            </li>
-            <li>
-              <a href="#">Use Cases</a>
+              <a href="#proccess">Proccess</a>
             </li>
           </ul>
           <Button
