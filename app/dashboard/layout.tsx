@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 
-import AuroraGradient from "../components/auroraGradient/auroraGradientAnimated";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -20,8 +18,10 @@ export default function DashboardLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} antialiased`}>
-        <AuroraGradient>{children}</AuroraGradient>
+      <body
+        className={`${geistSans.variable} antialiased bg-[url('/noise.svg')] bg-cover bg-center`}
+      >
+        {children}
       </body>
     </html>
   );
