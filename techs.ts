@@ -35,3 +35,22 @@ export const backEndTechnologies = [
     tech: "Laravel",
   },
 ];
+
+export const database = [
+  {
+    id: 1,
+    tech: "MySQL",
+  },
+  {
+    id: 2,
+    tech: "PostgreSQL",
+  },
+  {
+    id: 3,
+    tech: "MongoDB",
+  },
+  {
+    id: 4,
+    tech: "SQLite",
+  },
+];
