@@ -36,7 +36,7 @@ export const backEndTechnologies = [
   },
 ];
 
-export const database = [
+export const databaseList = [
   {
     id: 1,
     tech: "MySQL",
