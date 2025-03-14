@@ -1,31 +1,37 @@
 "use client";
 import {
   Button,
+  Checkbox,
   FormControl,
+  FormControlLabel,
   InputLabel,
   MenuItem,
   Select,
 } from "@mui/material";
 import Form from "next/form";
 import SubmitAction from "./submitAction";
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import {
-  backEndTechnologies,
-  frontEndTechnologies,
+  frontendTechnologies,
+  backendTechnologies,
   databaseList,
+  microservices,
 } from "@/techs";
 
-interface Techs {
+interface names {
   id: number;
-  tech: string;
+  name: string;
 }
 
 export default function BuildMyProjectForm() {
-  const frontEnd: Techs[] = frontEndTechnologies;
+  const frontEnd: names[] = frontendTechnologies;
+  const [isOpen, setOpen] = useState<boolean>(false);
   const [state, formAction, isPending] = useActionState(SubmitAction, null);
-  if (state?.success === false) {
-    console.log();
-  }
+
+  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setOpen(event.target.checked);
+  };
+
   return (
     <Form
       action={formAction}
@@ -42,8 +48,8 @@ export default function BuildMyProjectForm() {
           className="w-full"
         >
           {frontEnd.map((front) => (
-            <MenuItem key={front.id} value={front.tech}>
-              {front.tech}
+            <MenuItem key={front.id} value={front.name}>
+              {front.name}
             </MenuItem>
           ))}
         </Select>
@@ -57,9 +63,9 @@ export default function BuildMyProjectForm() {
           defaultValue={[]}
           className="w-full"
         >
-          {backEndTechnologies.map((back) => (
-            <MenuItem key={back.id} value={back.tech}>
-              {back.tech}
+          {backendTechnologies.map((back) => (
+            <MenuItem key={back.id} value={back.name}>
+              {back.name}
             </MenuItem>
           ))}
         </Select>
@@ -74,15 +80,66 @@ export default function BuildMyProjectForm() {
           className="w-full"
         >
           {databaseList.map((option) => (
-            <MenuItem key={option.id} value={option.tech}>
-              {option.tech}
+            <MenuItem key={option.id} value={option.name}>
+              {option.name}
             </MenuItem>
           ))}
         </Select>
       </FormControl>
+      {/* <FormControl fullWidth>
+        <FormLabel>Microserviços</FormLabel>
+        <RadioGroup
+          row
+          aria-labelledby="row-radio-buttons-group-label"
+          name="row-radio-buttons-group"
+          value={isOpen ? "yes" : "no"}
+          onChange={handleRadioChange}
+        >
+          <FormControlLabel value="yes" control={<Radio />} label="Yes" />
+          <FormControlLabel value="no" control={<Radio />} label="No" />
+        </RadioGroup>
+      </FormControl> */}
+      <div className="w-full ">
+        <FormControlLabel
+          className=" p-0 m-0"
+          control={
+            <Checkbox checked={isOpen} onChange={handleCheckboxChange} />
+          }
+          label="Suporte a Microserviços"
+          labelPlacement="start"
+        />
+      </div>
+
+      <FormControl fullWidth>
+        <InputLabel id="databse-label">Microserviços</InputLabel>
+        <Select
+          multiple={true}
+          disabled={!isOpen}
+          name="microservices"
+          label="microservicos"
+          defaultValue={[]}
+          className="w-full"
+        >
+          {microservices.map((option) => (
+            <MenuItem key={option.id} value={option.name}>
+              {option.name}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+
       <Button className="bg-red-400" disabled={isPending} type="submit">
         Enviar Ticket
       </Button>
+      {state?.success === false && (
+        <div
+          className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 mb-5 rounded relative"
+          role="alert"
+        >
+          <strong className="font-bold">Erro!</strong>
+          <span className="block">{state?.message}</span>
+        </div>
+      )}
     </Form>
   );
 }
