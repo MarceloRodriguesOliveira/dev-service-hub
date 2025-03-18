@@ -10,13 +10,14 @@ import {
 } from "@mui/material";
 import Form from "next/form";
 import SubmitAction from "./submitAction";
-import { useActionState, useState } from "react";
+import { useActionState, useEffect, useState } from "react";
 import {
   frontendTechnologies,
   backendTechnologies,
   databaseList,
   microservices,
 } from "@/techs";
+import { toast, ToastContainer } from "react-toastify";
 
 interface names {
   id: number;
@@ -27,10 +28,21 @@ export default function BuildMyProjectForm() {
   const frontEnd: names[] = frontendTechnologies;
   const [isOpen, setOpen] = useState<boolean>(false);
   const [state, formAction, isPending] = useActionState(SubmitAction, null);
+  const getSubmitStatus = () => {
+    return state?.success === true
+      ? toast.success("Ticket enviado. Designando desenvolvedores...")
+      : toast.error("Não foi possível enviar o ticket");
+  };
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setOpen(event.target.checked);
   };
+
+  useEffect(() => {
+    if (state) {
+      getSubmitStatus();
+    }
+  }, [state]);
 
   return (
     <Form
@@ -131,15 +143,7 @@ export default function BuildMyProjectForm() {
       <Button className="bg-red-400" disabled={isPending} type="submit">
         Enviar Ticket
       </Button>
-      {state?.success === false && (
-        <div
-          className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 mb-5 rounded relative"
-          role="alert"
-        >
-          <strong className="font-bold">Erro!</strong>
-          <span className="block">{state?.message}</span>
-        </div>
-      )}
+      <ToastContainer />
     </Form>
   );
 }
