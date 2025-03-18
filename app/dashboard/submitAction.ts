@@ -13,13 +13,17 @@ export default async function SubmitAction(
   formData: FormData
 ) {
   try {
-    const microservices = formData.getAll("microservices") as string[];
+    const microservices = formData
+      .getAll("microservices")
+      .filter((s): s is string => typeof s === "string")
+      .map((s) => s.trim())
+      .filter(Boolean);
     const data: FormDataObject = {
       frontEnd: formData.getAll("frontend") as string[],
       backEnd: formData.getAll("backend") as string[],
       database: formData.getAll("database") as string[],
       ...(microservices.length > 0
-        ? { microservices: formData.getAll("microservices") as string[] }
+        ? { microservices: microservices }
         : { microservices: false }),
     };
 
