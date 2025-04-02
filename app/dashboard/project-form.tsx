@@ -1,9 +1,7 @@
 "use client";
 import {
   Button,
-  Checkbox,
   FormControl,
-  FormControlLabel,
   InputLabel,
   MenuItem,
   Select,
@@ -26,16 +24,12 @@ interface names {
 
 export default function BuildMyProjectForm() {
   const frontEnd: names[] = frontendTechnologies;
-  const [isOpen, setOpen] = useState<boolean>(false);
+
   const [state, formAction, isPending] = useActionState(SubmitAction, null);
   const getSubmitStatus = () => {
     return state?.success === true
       ? toast.success("Ticket enviado. Designando desenvolvedores...")
       : toast.error("Não foi possível enviar o ticket");
-  };
-
-  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setOpen(event.target.checked);
   };
 
   useEffect(() => {
