@@ -7,8 +7,8 @@ import {
   Select,
 } from "@mui/material";
 import Form from "next/form";
-import SubmitAction from "./submitAction";
-import { useActionState, useEffect, useState } from "react";
+import SubmitAction from "../submitAction";
+import { useActionState, useEffect } from "react";
 import {
   frontendTechnologies,
   backendTechnologies,
@@ -16,6 +16,7 @@ import {
   microservices,
 } from "@/techs";
 import { toast, ToastContainer } from "react-toastify";
+import { redirect } from "next/navigation";
 
 interface names {
   id: number;
@@ -32,9 +33,16 @@ export default function BuildMyProjectForm() {
       : toast.error("Não foi possível enviar o ticket");
   };
 
+  const redirectToDeveloper = () => {
+    setTimeout(() => {
+      redirect("/");
+    }, 5000);
+  };
+
   useEffect(() => {
     if (state) {
       getSubmitStatus();
+      redirectToDeveloper();
     }
   }, [state]);
 
