@@ -9,7 +9,7 @@ export default function HireOurServices() {
           title="Discuta o seu projeto conosco"
           subheader="Nos conte um pouco sobre sua aplicação web!"
         />
-        <CardContent className="py-0 px-4">
+        <CardContent className="py-0 ">
           <BuildMyProjectForm />
         </CardContent>
       </Card>
