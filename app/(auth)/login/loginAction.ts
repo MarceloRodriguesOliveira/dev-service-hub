@@ -10,7 +10,7 @@ export default async function loginAction(_prevState: any, formData: FormData) {
       email: formData.get("email") as string,
       password: formData.get("password") as string,
       redirect: true,
-      redirectTo: "/dashboard",
+      redirectTo: "/dashboard/form",
     });
 
     return { success: true };
